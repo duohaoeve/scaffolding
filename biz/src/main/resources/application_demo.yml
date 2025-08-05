@@ -1,0 +1,54 @@
+server:
+  port: 8082
+logging:
+  file:
+    name: D://logs/globle.log
+  level:
+    com:
+      shaohao:
+        mytask:
+          mapper: debug
+
+
+  http:
+    # newcall重试次数
+    maxRetryCount: 3
+    # 预期状态码
+    expectedStatusCode: 0
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://11?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT&useSSL=false
+    username: user
+    password: user
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      oracle-pooled-prepared-statements: false
+      pool:
+        prepared-statement-cache-enabled: false
+        prepared-statement-cache-query-size: 0
+
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: Asia/Shanghai
+
+mybatis:
+  type-aliases-package: com.shaohao.scaffold.entity
+  mapper-locations:  classpath:mapper/*.xml
+
+
+cmc:
+  base-url: https://pro-api.coinmarketcap.com
+  key: your_coinmarketcap_api_key_here
+
+dbot:
+  api-key: xxx
+
+deepseek:
+  url: https://api.deepseek.com/chat/completions
+  bearer: Bearer xx
+  api-key: xxxxxxxxxx
+toto:
+    url: xx
+    key: xx
+
